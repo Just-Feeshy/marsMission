@@ -45,8 +45,8 @@ class WorldMap {
     }
 
     public function refresh():Void {
-        var directory:String = "../../../";
-        var serverFileName:String = directory + "game/s" + Main.id + "_" + Main.round + ".txt";
+        var directory:String = "/game/";
+        var serverFileName:String = directory + "s" + Main.id + "_" + Main.round + ".txt";
 
         content = File.getContent(serverFileName);
         var lines = content.split("\n");

@@ -31,20 +31,19 @@ class Main {
     }
 
     public static function begin(id:Int):Void {
-        var directory:String = "../../../";
+        var directory:String = "/game/";
 
-        var serverFileName:String = directory + "game/s" + id + "_" + round + ".txt";
+        var serverFileName:String = directory + "s" + id + "_" + round + ".txt";
         var createdMap = false;
+
+        if(!FileSystem.exists(directory)) {
+            Log.warning("Directory" + directory + " does not exist.");
+        }
 
         while(true) {
             untyped __cpp__('std::this_thread::sleep_for(std::chrono::milliseconds(5));');
 
-            serverFileName = directory + "game/s" + id + "_" + round + ".txt";
-
-            if(!FileSystem.exists(directory)) {
-                Log.warning("Directory" + directory + " does not exist.");
-                break;
-            }
+            serverFileName = directory + "s" + id + "_" + round + ".txt";
 
             if(FileSystem.exists(serverFileName)) {
                 var content = File.getContent(serverFileName);
