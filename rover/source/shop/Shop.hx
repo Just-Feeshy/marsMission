@@ -7,7 +7,7 @@ class Shop {
 
     public function new() {
         queue = new ShopQueue(function(m1:Market, m2:Market) {
-            return m2.price() - m1.price();
+            return m1.price() - m2.price();
         });
 
 

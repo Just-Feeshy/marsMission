@@ -51,12 +51,10 @@ class Player {
 
         __whatIwannaBuy = world.shop.checkToBuy(world.iron, world.osmium);
 
-        /*
         if(__whatIwannaBuy != null && __playerQueue.length == 0) {
             trace("hi");
-            // backToBase();
+            backToBase();
         }
-        */
 
         if(__rockQueue.length > 0) {
             goToOre();
