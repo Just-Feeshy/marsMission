@@ -11,6 +11,7 @@ import info.Instructions;
 @:buildXml('<include name="../../Include.xml.tpl" />')
 @:cppInclude("rover.h")
 class Main {
+    public static var directory:String = "game/";
     public static var id(default, null):Int = 0;
     public static var round(default, null):Int = 0;
     public static var map(default, null):WorldMap;
@@ -31,8 +32,6 @@ class Main {
     }
 
     public static function begin(id:Int):Void {
-        var directory:String = "game/";
-
         var serverFileName:String = directory + "s" + id + "_" + round + ".txt";
         var createdMap = false;
 
