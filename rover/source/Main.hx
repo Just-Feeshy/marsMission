@@ -31,7 +31,7 @@ class Main {
     }
 
     public static function begin(id:Int):Void {
-        var directory:String = "/game/";
+        var directory:String = "game/";
 
         var serverFileName:String = directory + "s" + id + "_" + round + ".txt";
         var createdMap = false;

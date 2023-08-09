@@ -16,7 +16,7 @@ class Player {
     public var world(default, null):WorldMap;
     public var facing(default, null):String;
 
-    @:noCompletion private var __directory:String = "../../../";
+    @:noCompletion private var __directory:String = "game/";
     @:noCompletion private var __directions:Array<String> = [UP, DOWN, LEFT, RIGHT];
     @:noCompletion private var __rockQueue:Array<Node>;
     @:noCompletion private var __playerQueue:Array<Node>;
@@ -195,7 +195,7 @@ class Player {
     }
 
     public function command(cmd:String):Void {
-        var client:String = __directory + "game/c" + Main.id + "_" + Main.round + ".txt";
+        var client:String = __directory + "c" + Main.id + "_" + Main.round + ".txt";
 
         File.saveContent(client, cmd + "\n");
     }
